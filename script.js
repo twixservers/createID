@@ -14,5 +14,6 @@ function genUid() {
     // uid1 = uid.rnd();
     uidValueholder.innerText = uid1;
     document.getElementById("genUid").style.display = "none";
-    document.getElementById("uidValueCopy").style.display = "block";
+    document.getElementById("addtoFB").style.display = "block";
+    uidValueCopyholder.style.display = "block";
 }

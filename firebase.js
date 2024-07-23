@@ -14,6 +14,7 @@ firebase.initializeApp({
 const db = firebase.firestore();
 
 
+const form = document.getElementById("form");
 const Name = document.getElementById("userName");
 const dob = document.getElementById("userDob");
 const gender = document.getElementById("userGender");
@@ -22,7 +23,7 @@ const addr = document.getElementById("useradd");
 const btn = document.getElementById("addtoFB");
 const uidValueCopyholder = document.getElementById("uidValueCopy");
 
-btn.addEventListener('click', ()=>{
+form.addEventListener('submit', ()=>{
     const uid = uidValueCopyholder.innerText;
     db.collection('userInfo').doc(uid).set({
         Name: Name.value,
@@ -33,4 +34,7 @@ btn.addEventListener('click', ()=>{
         UID: uid
     });
     // window.location.reload();
+    const uidShareLinkHolder = document.getElementById("uidShareLink");
+    uidShareLinkHolder.innerHTML = `<a href="https://twixservers.github.io/searchID/?uid=${uid1}" target="_blank">https://twixservers.github.io/searchID/?uid=${uid1}</a>`;
+    uidShareLinkHolder.style.display = "block";
 })

@@ -27,7 +27,7 @@
             </div>
         <br><br>
         <div class="noPrint">
-            <form>
+            <form id="form" action="e.preventDefault()">
                 <b>Enter Name on ID: </b><br>
                 <input oninput="changeData('userName', 'name')" placeholder="Enter Name" type="text" name="userName" id="userName" value="" required><br><br>
                 <b>Enter Date of Birth on ID: </b><br>
@@ -38,12 +38,13 @@
                 <input placeholder="Enter Phone no." type="text" name="userphone" id="userphone" value="" required><br><br>
                 <b>Enter Address to store: </b><br>
                 <input placeholder="Enter Address" type="text" name="useradd" id="useradd" value="" required><br><br>
+                <a id="genUid" onclick="genUid()"><u>Generate UID</u></a><br>
+                <span style="display: none;" id="uidValueCopy">XXXXXXXXXX</span><br>
+                <button style="display: none;" class="noPrint" id="addtoFB">Submit</button>
             </form>
-            <button id="genUid" onclick="genUid()">Generate UID</button><br><br>
-            <span style="display: none;" id="uidValueCopy">XXXXXXXXXX</span><br><br>
         </div>
-
-        <button class="noPrint" id="addtoFB" onclick="AddDocument_autoID()">Submit</button>
+        
+        <div style="display: none;" id="uidShareLink"></div><br><br>
         <br><br><button onclick="window.print();" class="noPrint">Print Me</button>
     </section>
 
