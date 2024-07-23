@@ -23,7 +23,7 @@ const addr = document.getElementById("useradd");
 const btn = document.getElementById("addtoFB");
 const uidValueCopyholder = document.getElementById("uidValueCopy");
 
-form.addEventListener('submit', ()=>{
+btn.addEventListener('click', ()=>{
     const uid = uidValueCopyholder.innerText;
     db.collection('userInfo').doc(uid).set({
         Name: Name.value,
@@ -35,6 +35,12 @@ form.addEventListener('submit', ()=>{
     });
     // window.location.reload();
     const uidShareLinkHolder = document.getElementById("uidShareLink");
-    uidShareLinkHolder.innerHTML = `<a href="https://twixservers.github.io/searchID/?uid=${uid1}" target="_blank">https://twixservers.github.io/searchID/?uid=${uid1}</a>`;
+    uidShareLinkHolder.innerHTML = `<a href="https://twixservers.github.io/searchID/?uid=${uid}" target="_blank">https://twixservers.github.io/searchID/?uid=${uid}</a>`;
     uidShareLinkHolder.style.display = "block";
+
+    document.getElementById("afterUidDispaly").innerText = uid;
+
+    document.getElementById("createIdSection").style.display = 'none';
+    document.getElementById("idCreated").style.display = 'block';
+
 })

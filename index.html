@@ -27,7 +27,7 @@
             </div>
         <br><br>
         <div class="noPrint">
-            <form id="form">
+            <form id="form" action="e.preventDefault()">
                 <b>Enter Name on ID: </b><br>
                 <input oninput="changeData('userName', 'name')" placeholder="Enter Name" type="text" name="userName" id="userName" value="" required><br><br>
                 <b>Enter Date of Birth on ID: </b><br>
@@ -40,12 +40,18 @@
                 <input placeholder="Enter Address" type="text" name="useradd" id="useradd" value="" required><br><br>
                 <a id="genUid" onclick="genUid()"><u>Generate UID</u></a><br>
                 <span style="display: none;" id="uidValueCopy">XXXXXXXXXX</span><br>
-                <button style="display: none;" class="noPrint" id="addtoFB">Submit</button>
             </form>
+            <button style="display: none;" class="noPrint" id="addtoFB">Submit</button>
         </div>
         
-        <div style="display: none;" id="uidShareLink"></div><br><br>
         <br><br><button onclick="window.print();" class="noPrint">Print Me</button>
+    </section>
+    
+    
+    <section id="idCreated" style="display: none;">
+        <strong>TWIX ID CREATED</strong><br>
+        <strong>USER UID: <span id="afterUidDispaly"></span></strong><br>
+        <div style="display: none;" id="uidShareLink"></div><br><br>
     </section>
 
 
@@ -63,15 +69,6 @@
     document.getElementById('uidInput').value = uidInput;
     document.getElementById('getInfoBtn').click();
   })();
-
-    //Get form element
-var form=document.getElementById("form");
-function submitForm(event){
-
-   //Preventing page refresh
-   event.preventDefault();
-}
-
 </script>
 
 </body>
