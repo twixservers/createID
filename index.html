@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twix ID</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- CREATE TWIX ID -->
+    <section id="createIdSection">
+            <div id="mainID">
+                <div id="innerDiv">
+                    <h2><strong>TWIX ID</strong></h2>
+                </div>
+                <br><br><br>
+                <div id="idInfo">
+                    <strong><p id="name">John Doe</p></strong>
+                    <strong><span id="uid">UID: </span><span id="uidValue">XXXXXXXXXX</span></strong>
+                </div>
+            </div>
+        <br><br>
+        <div class="noPrint">
+            <form>
+                <b>Enter Name on ID: </b><br>
+                <input oninput="changeData('userName', 'name')" placeholder="Enter Name" type="text" name="userName" id="userName" value="" required><br><br>
+                <b>Enter Date of Birth on ID: </b><br>
+                <input placeholder="Enter Date of Birth" type="date" name="userDob" id="userDob" value="" required><br><br>
+                <b>Enter Gender on ID: </b><br>
+                <input placeholder="Enter Gender" type="text" name="userGender" id="userGender" value="" required><br><br>
+                <b>Enter Phone no. on ID: </b><br>
+                <input placeholder="Enter Phone no." type="text" name="userphone" id="userphone" value="" required><br><br>
+                <b>Enter Address to store: </b><br>
+                <input placeholder="Enter Address" type="text" name="useradd" id="useradd" value="" required><br><br>
+            </form>
+            <button id="genUid" onclick="genUid()">Generate UID</button><br><br>
+            <span style="display: none;" id="uidValueCopy">XXXXXXXXXX</span><br><br>
+        </div>
+
+        <button class="noPrint" id="addtoFB" onclick="AddDocument_autoID()">Submit</button>
+        <br><br><button onclick="window.print();" class="noPrint">Print Me</button>
+    </section>
+
+
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/short-unique-id@5.2.0/dist/short-unique-id.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script>
+    (function(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const uidInput = urlParams.get('uidInput')
+    document.getElementById('uidInput').value = uidInput;
+    document.getElementById('getInfoBtn').click();
+  })();
+</script>
+
+</body>
+</html>
