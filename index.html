@@ -64,9 +64,16 @@
     document.getElementById('getInfoBtn').click();
   })();
 
-    document.getElementById("form").addEventListener('submit', ()=>{
-        e.preventDefault();
-    });
+    //Get form element
+var form=document.getElementById("form");
+function submitForm(event){
+
+   //Preventing page refresh
+   event.preventDefault();
+}
+
+//Calling a function during form submission.
+form.addEventListener('submit', submitForm);
 </script>
 
 </body>
