@@ -27,7 +27,7 @@
             </div>
         <br><br>
         <div class="noPrint">
-            <form id="form" action=`e.preventDefault()`>
+            <form id="form" action="noreload()">
                 <b>Enter Name on ID: </b><br>
                 <input oninput="changeData('userName', 'name')" placeholder="Enter Name" type="text" name="userName" id="userName" value="" required><br><br>
                 <b>Enter Date of Birth on ID: </b><br>
@@ -63,6 +63,10 @@
     document.getElementById('uidInput').value = uidInput;
     document.getElementById('getInfoBtn').click();
   })();
+
+    function noreload() {
+        e.preventDefault();
+    }
 </script>
 
 </body>
